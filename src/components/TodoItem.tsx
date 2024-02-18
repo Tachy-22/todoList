@@ -16,13 +16,22 @@ const TodoItem: React.FC<TodoItemProps> = ({
 }) => {
   return (
     <li className="flex items-center mb-2 shadow-xl rounded-md p-3 bg-white">
-      <input
-        type="checkbox"
-        checked={todo.checked}
-        onChange={() => onCheckToggle(todo.id)}
-        className="mr-2 accent-green-500"
-      />
-      <span className={`flex-grow ${todo.checked ? "line-through" : ""}`}>
+      <button
+        onClick={() => onCheckToggle(todo.id)}
+        className={`border border-gray-400 w-6 h-6 relative aspect-square rounded-full  focus:outline-none p-3 ${
+          todo.checked ? "bg-green-500 text-white" : ""
+        }`}
+      >
+        <span className="absolute top-0 left-[0.25rem] text-black font-extrabold ">
+          {" "}
+          {todo.checked && "✓"}
+        </span>
+      </button>
+      <span
+        className={`flex-grow pl-2 ${
+          todo.checked ? "line-through text-gray-400 decoration-gray-400" : ""
+        }`}
+      >
         {todo.content}
       </span>
       <button
