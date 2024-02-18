@@ -27,7 +27,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
       </span>
       <button
         onClick={() => onEditClick(todo.id)}
-        className="border border-blue-900 text-blue-900  p-2 rounded-lg"
+        className="border hover:backdrop-brightness-[90%] border-blue-900 text-blue-900  p-2 rounded-lg    "
       >
         Edit
       </button>

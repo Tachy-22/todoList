@@ -115,7 +115,7 @@ const TodoList: React.FC = () => {
             <div className="mb-4 flex justify-between items-center">
               <button
                 onClick={openAddTodoModal}
-                className="bg-blue-500 rounded-full text-white p-2  flex  h-[4rem] w-[4rem] text-5xl scale-[60%] font-bold text-center mx-auto relative"
+                className="bg-blue-500 rounded-full text-white p-2  flex  h-[4rem] w-[4rem] text-5xl scale-[60%] font-bold text-center mx-auto relative hover:brightness-[80%]"
               >
                 <p className="mx-auto text-center h-fit  absolute top-[0.2rem] right-[0.95rem]">
                   +
