@@ -9,17 +9,19 @@ const initialTodos = [
   { id: 3, content: "Task 3", checked: false },
 ];
 
+type TTodoType = {
+  id: number;
+  content: string;
+} | null;
+
 const TodoList: React.FC = () => {
   const [todos, setTodos] = useState(initialTodos);
-  const [editingTodo, setEditingTodo] = useState<{
-    id: number;
-    content: string;
-  } | null>(null);
+  const [editingTodo, setEditingTodo] = useState<TTodoType>(null);
   const [isAddTodoModalOpen, setAddTodoModalOpen] = useState(false);
 
   const handleEditClick = (id: number) => {
     const todoToEdit = todos.find((todo) => todo.id === id);
-    setEditingTodo(todoToEdit);
+    setEditingTodo(todoToEdit as TTodoType);
   };
 
   const handleSaveEdit = (newContent: string) => {

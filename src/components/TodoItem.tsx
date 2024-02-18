@@ -1,5 +1,5 @@
 // components/TodoItem.tsx
-import React, { useState } from "react";
+import React from "react";
 
 interface TodoItemProps {
   todo: { id: number; content: string; checked: boolean };
@@ -12,16 +12,8 @@ interface TodoItemProps {
 const TodoItem: React.FC<TodoItemProps> = ({
   todo,
   onEditClick,
-  isEditing,
-  onSaveEdit,
   onCheckToggle,
 }) => {
-  const [editedContent, setEditedContent] = useState(todo.content);
-
-  const handleSaveEdit = () => {
-    onSaveEdit(editedContent);
-  };
-
   return (
     <li className="flex items-center mb-2">
       <input

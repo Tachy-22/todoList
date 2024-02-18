@@ -1,5 +1,5 @@
 // App.tsx
-import React, { useState } from "react";
+import React from "react";
 import TodoList from "./components/TodoList";
 
 const App: React.FC = () => {
