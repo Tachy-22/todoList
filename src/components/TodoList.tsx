@@ -81,9 +81,13 @@ const TodoList: React.FC = () => {
   return (
     <div className="flex flex-col w-full bg-gray-100">
       <div className="flex md:flex-row flex-col-reverse">
-        <div className={editingTodo ? "md:w-1/2 " : "w-full p-4 "}>
-          <div className="mb-4 w-full flex items-center px-3  gap-2 bg-blue-600">
-            <h1 className="text-2xl font-bold">User Details</h1>
+        <div className={editingTodo ? "md:w-1/2 pb-6" : "w-full p-4 "}>
+          <div className="mb-4 w-full flex items-center p-3 gap-2 bg-blue-600 text-white">
+            <img
+              src="https://github.com/shadcn.png"
+              alt=""
+              className=" w-10 h-10 rounded-full"
+            />
             <div className="flex flex-col gap-1">
               <p> Hello. {userDetails.username}</p>
               <p className=" text-2xl font-light italic">
@@ -103,7 +107,7 @@ const TodoList: React.FC = () => {
               />
             ))}
           </ul>
-          <div className="mt-4 flex w-full justify-between items-center">
+          <div className="mt-4 flex w-full justify-between items-center px-3">
             <p className="text-lg font-semibold">
               Checked Todos: {checkedTodosCount}
             </p>
@@ -119,20 +123,20 @@ const TodoList: React.FC = () => {
         </div>
 
         {editingTodo && (
-          <aside className="md:w-1/2  md:border-l flex flex-col gap-6">
-            <div className="bg-blue-600 w-full py-4 text-white  flex justify-center relative items-center">
-              <h2 className="text-xl h-fit border font-bold  flex justify-between items-center">
+          <aside className="md:w-1/2  md:border-l flex flex-col gap-6 pb-6">
+            <div className="bg-blue-600 w-full py-[1.7rem] text-white  flex justify-center relative items-center">
+              <h2 className="text-xl h-fit  font-bold  flex justify-between items-center">
                 Edit Todo{" "}
               </h2>{" "}
               <button
                 onClick={handleCloseEdit}
-                className="border rounded-lg text-black border-black p-2 absolute right-5 text-sm"
+                className="border rounded-lg border-white p-2 absolute right-5 text-sm"
               >
                 close
               </button>
             </div>
 
-            <div className="h-full">
+            <div className="h-full px-6 py-2">
               <h2 className="py-6">Task Name</h2>
               <input
                 type="text"
