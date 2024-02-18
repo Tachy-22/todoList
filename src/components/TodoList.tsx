@@ -73,13 +73,25 @@ const TodoList: React.FC = () => {
   };
 
   const checkedTodosCount = todos.filter((todo) => todo.checked).length;
+  const userDetails = {
+    username: "John Doe",
+    email: "john.doe@example.com",
+  };
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full bg-gray-100">
       <div className="flex md:flex-row flex-col-reverse">
-        <div className={editingTodo ? "md:w-1/2 p-4 pb-0" : "w-full p-4 pb-0"}>
-          <h2 className="text-xl font-bold mb-4">Todo List</h2>
-          <ul>
+        <div className={editingTodo ? "md:w-1/2 " : "w-full p-4 "}>
+          <div className="mb-4 w-full flex items-center px-3  gap-2 bg-blue-600">
+            <h1 className="text-2xl font-bold">User Details</h1>
+            <div className="flex flex-col gap-1">
+              <p> Hello. {userDetails.username}</p>
+              <p className=" text-2xl font-light italic">
+                What are your plans for today?
+              </p>
+            </div>
+          </div>
+          <ul className="px-2">
             {todos.map((todo) => (
               <TodoItem
                 key={todo.id}
@@ -108,7 +120,7 @@ const TodoList: React.FC = () => {
 
         {editingTodo && (
           <aside className="md:w-1/2  md:border-l flex flex-col gap-6">
-            <div className="bg-blue-400 w-full py-4  flex justify-center relative items-center">
+            <div className="bg-blue-600 w-full py-4 text-white  flex justify-center relative items-center">
               <h2 className="text-xl h-fit border font-bold  flex justify-between items-center">
                 Edit Todo{" "}
               </h2>{" "}

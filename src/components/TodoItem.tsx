@@ -15,7 +15,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
   onCheckToggle,
 }) => {
   return (
-    <li className="flex items-center mb-2">
+    <li className="flex items-center mb-2 shadow-xl rounded-md p-3 bg-white">
       <input
         type="checkbox"
         checked={todo.checked}
@@ -27,7 +27,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
       </span>
       <button
         onClick={() => onEditClick(todo.id)}
-        className="bg-yellow-500 text-white p-2 rounded-lg"
+        className="border border-blue-900 text-blue-900  p-2 rounded-lg"
       >
         Edit
       </button>
