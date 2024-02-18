@@ -20,7 +20,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
         type="checkbox"
         checked={todo.checked}
         onChange={() => onCheckToggle(todo.id)}
-        className="mr-2"
+        className="mr-2 accent-green-500"
       />
       <span className={`flex-grow ${todo.checked ? "line-through" : ""}`}>
         {todo.content}

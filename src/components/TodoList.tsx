@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
 import AddTodoModal from "./AddTodoModal";
+import EditTodoAside from "./EditTodoAside";
 
 const initialTodos = [
   { id: 1, content: "Task 1", checked: false },
@@ -114,57 +115,23 @@ const TodoList: React.FC = () => {
             <div className="mb-4 flex justify-between items-center">
               <button
                 onClick={openAddTodoModal}
-                className="bg-blue-500 rounded-full text-white p-2 px-3 flex  h-fit w-fit"
+                className="bg-blue-500 rounded-full text-white p-2  flex  h-[4rem] w-[4rem] text-5xl scale-[60%] font-bold text-center mx-auto relative"
               >
-                +
+                <p className="mx-auto text-center h-fit  absolute top-[0.2rem] right-[0.95rem]">
+                  +
+                </p>
               </button>
             </div>
           </div>
         </div>
 
         {editingTodo && (
-          <aside className="md:w-1/2  md:border-l flex flex-col gap-6 pb-6">
-            <div className="bg-blue-600 w-full py-[1.7rem] text-white  flex justify-center relative items-center">
-              <h2 className="text-xl h-fit  font-bold  flex justify-between items-center">
-                Edit Todo{" "}
-              </h2>{" "}
-              <button
-                onClick={handleCloseEdit}
-                className="border rounded-lg border-white p-2 absolute right-5 text-sm"
-              >
-                close
-              </button>
-            </div>
-
-            <div className="h-full px-6 py-2">
-              <h2 className="py-6">Task Name</h2>
-              <input
-                type="text"
-                value={editingTodo.content}
-                onChange={(e) =>
-                  setEditingTodo((prev) =>
-                    prev ? { ...prev, content: e.target.value } : null
-                  )
-                }
-                className="w-full mb-4 p-2 border"
-              />
-            </div>
-
-            <div className="flex justify-between gap-4">
-              <button
-                onClick={handleDelete}
-                className="bg-red-500 text-white p-2 rounded-lg px-6"
-              >
-                Delete
-              </button>
-              <button
-                onClick={() => handleSaveEdit(editingTodo.content)}
-                className="bg-blue-500 text-white p-2 rounded-lg w-full"
-              >
-                Save
-              </button>
-            </div>
-          </aside>
+          <EditTodoAside
+            editingTodo={editingTodo}
+            onClose={handleCloseEdit}
+            onDelete={handleDelete}
+            onSaveEdit={handleSaveEdit}
+          />
         )}
       </div>
 
