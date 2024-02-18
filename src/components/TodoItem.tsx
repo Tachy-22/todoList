@@ -19,10 +19,10 @@ const TodoItem: React.FC<TodoItemProps> = ({
       <button
         onClick={() => onCheckToggle(todo.id)}
         className={`border border-gray-400 w-6 h-6 relative aspect-square rounded-full  focus:outline-none p-3 ${
-          todo.checked ? "bg-green-500 text-white" : ""
+          todo.checked ? "bg-green-500 " : ""
         }`}
       >
-        <span className="absolute top-0 left-[0.25rem] text-black font-extrabold ">
+        <span className="absolute top-0 left-[0.25rem] text-green-700 font-extrabold ">
           {" "}
           {todo.checked && "✓"}
         </span>

@@ -96,7 +96,7 @@ const TodoList: React.FC = () => {
               </p>
             </div>
           </div>
-          <ul className="px-2">
+          <ul className="px-2 flex flex-col gap-4">
             {todos.map((todo) => (
               <TodoItem
                 key={todo.id}
